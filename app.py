@@ -1,23 +1,24 @@
 import streamlit as st
 import joblib
 
-# Load model
+# Load model and vectorizer
 model = joblib.load("sentiment_model.pkl")
+vectorizer = joblib.load("vectorizer.pkl")
 
-st.set_page_config(
-    page_title="Sentiment Analyzer",
-    layout="centered"
-)
+st.title("Sentiment Analysis App")
 
-st.title("😊 Sentiment Analysis Web App")
+user_input = st.text_area("Enter your text:")
 
-st.write("Enter a sentence and check its sentiment!")
-
-user_input = st.text_area("Your text here:")
-
-if st.button("Analyze"):
+if st.button("Predict"):
     if user_input.strip() != "":
-        result = model.predict([user_input])
+        
+        # Transform text
+        vect_text = vectorizer.transform([user_input])
+        
+        # Predict
+        result = model.predict(vect_text)
+
         st.success(f"Sentiment: {result[0]}")
+    
     else:
         st.warning("Please enter text")
