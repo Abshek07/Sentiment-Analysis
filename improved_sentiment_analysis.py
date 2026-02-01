@@ -55,3 +55,8 @@ vectorizer = joblib.load("vectorizer.pkl")
 input_vect = vectorizer.transform([user_input])
 prediction = model.predict(input_vect)
 print("Sentiment:", prediction[0])
+
+import joblib
+
+joblib.dump(model, "sentiment_model.pkl")
+print("Model saved!")
