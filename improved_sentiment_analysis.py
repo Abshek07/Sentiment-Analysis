@@ -59,4 +59,7 @@ print("Sentiment:", prediction[0])
 import joblib
 
 joblib.dump(model, "sentiment_model.pkl")
-print("Model saved!")
+joblib.dump(vectorizer, "vectorizer.pkl")
+
+print("Model and vectorizer saved!")
+
