@@ -20,7 +20,7 @@ Input: "This product is amazing"
 Output: Positive
 
 Input: "This product is sucks"
-Output: Negitive
+Output: Negative
 
 ## Author
 Abhishekgouda Patil
