@@ -19,5 +19,8 @@ This project predicts whether text feedback is Positive, Negative, or Neutral us
 Input: "This product is amazing"
 Output: Positive
 
+Input: "This product is sucks"
+Output: Negitive
+
 ## Author
 Abhishekgouda Patil
